@@ -21,4 +21,27 @@ int fast_exp(float x, int n){
    if (b==0)
       return 1;
    else return x;
-} 
+}
+int main(){
+    int a=0;
+    int b=0;
+    int c=0;
+    float d;
+    float m;
+    printf("What is your home value?");
+    scanf("%d",&a);
+    printf("What is your down payment?");
+    scanf("%d",&b);
+    printf("What is your amortization period(years)?");
+    scanf("%d",&c);
+    printf("What is your interest rates? ");
+    scanf("%f",&d);
+    a=a-b;
+    d=d/1200;
+    float y=d;
+    d++;
+    c=c*12;
+    d=fast_exp(d,c);    
+    m=a*y*d/(d-1);
+    printf("Your monthly payment is %f\n",m);
+}
