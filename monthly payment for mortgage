@@ -1,0 +1,24 @@
+#include <stdio.h>
+int fast_exp(float x, int n){
+   float a=x;
+   int c[100]={0};
+   int k=1;
+   int b=n;
+   for(int i=0;i<32;i++){
+      if (n==1) break;
+      if (n%2==1)
+         c[i]=1;
+      else c[i]=0;
+      n=n/2;
+      k++;
+   }
+   for(int i=k-2;i>-1;i--){
+      if(c[i]==0)
+         x=x*x;
+      else{
+         x=a*x*x;}      
+   }
+   if (b==0)
+      return 1;
+   else return x;
+} 
